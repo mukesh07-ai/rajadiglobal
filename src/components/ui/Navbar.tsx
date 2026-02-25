@@ -48,6 +48,19 @@ export function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Prevent body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [mobileMenuOpen]);
+
     const toggleTheme = () => {
         const newTheme = theme === "dark" ? "light" : "dark";
         setTheme(newTheme);
@@ -57,11 +70,11 @@ export function Navbar() {
 
     return (
         <motion.header
-            initial={{ y: -100 }}
+            initial={{ y: 0 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className={cn(
-                "fixed top-0 w-full z-50 transition-all duration-500",
+                "fixed top-0 w-full z-[60] transition-all duration-500",
                 scrolled
                     ? "bg-slate-900/80 backdrop-blur-xl border-b border-white/5 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                     : "bg-transparent py-5 lg:py-6"
@@ -248,7 +261,7 @@ export function Navbar() {
                         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         exit={{ opacity: 0, y: "-100%", filter: "blur(10px)" }}
                         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="fixed inset-0 z-40 bg-slate-950/98 backdrop-blur-3xl lg:hidden flex flex-col pt-28 pb-8 px-8 overflow-y-auto"
+                        className="fixed inset-0 z-50 bg-slate-950/98 backdrop-blur-3xl lg:hidden flex flex-col pt-28 pb-8 px-8 overflow-y-auto"
                     >
                         {/* Decorative background element */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
