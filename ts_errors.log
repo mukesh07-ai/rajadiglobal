@@ -1,0 +1,9 @@
+﻿src/app/page.tsx(1,29): error TS2307: Cannot find module '@/components/home/HeroSection' or its corresponding type declarations.
+src/app/page.tsx(2,38): error TS2307: Cannot find module '@/components/home/IndustryFocusSection' or its corresponding type declarations.
+src/app/page.tsx(3,40): error TS2307: Cannot find module '@/components/home/ProblemSolutionSection' or its corresponding type declarations.
+src/app/page.tsx(4,33): error TS2307: Cannot find module '@/components/home/ServicesSection' or its corresponding type declarations.
+src/app/page.tsx(5,32): error TS2307: Cannot find module '@/components/home/MetricsSection' or its corresponding type declarations.
+src/app/page.tsx(6,36): error TS2307: Cannot find module '@/components/home/TestimonialSection' or its corresponding type declarations.
+src/components/ui/AnimatedCard.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/components/ui/Button.tsx(2,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/components/ui/Navbar.tsx(7,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
